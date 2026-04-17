@@ -95,6 +95,15 @@ window.members = [
   kota: "Madium",
   img: "kenzo.jpg",
   quote: "Hanya seorang pendosa yang ingin kembali jalan tuhannya"
+}, 
+   {
+  nama: "Vera",
+  umur: 16,
+  jabatan: "Member",
+  role: "Suport",
+  kota: "Jateng",
+  img: "vera.jpg",
+  quote: "OPMEM! kuyy join..."
 }
 ];
 
