@@ -1,0 +1,710 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,body{overflow-x:hidden}
+
+/* BODY */
+body{
+    background:#0F172A;
+    color:#E2E8F0;
+    padding-top:70px;
+}
+
+/* CONTAINER */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 15px;
+}
+
+/* NAVBAR */
+#navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:999;
+    background:#0F172A;
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.nav-wrapper{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+    position:relative;
+}
+
+.logo-text{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    font-weight:800;
+    color:#38BDF8;
+    text-shadow:0 0 10px #38BDF8;
+}
+
+.toggle{
+    font-size:24px;
+    cursor:pointer;
+    color:white;
+}
+
+/* MENU */
+.menu{
+    position:fixed;
+    top:70px;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:#020617;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    padding:20px;
+    transform:translateX(-100%);
+    transition:.4s;
+}
+
+.menu.active{transform:translateX(0)}
+
+.menu a{
+    color:#CBD5F5;
+    text-decoration:none;
+}
+
+.menu a.active{color:#38BDF8}
+
+/* HERO */
+.hero{
+    background:radial-gradient(circle at top,#1E293B,#020617);
+    text-align:center;
+    padding:90px 20px 120px;
+}
+
+.hero-logo img{
+    width:100px;
+    border-radius:50%;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.hero-logo img:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px #38BDF8;
+}
+
+.hero-logo.zoom img{
+    transform:scale(1.4);
+    box-shadow:0 0 40px #38BDF8;
+}
+
+/* BUTTON */
+.btn-primary{
+    background:linear-gradient(45deg,#38BDF8,#6366F1);
+    color:white;
+    padding:12px 25px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    box-shadow:0 0 15px rgba(56,189,248,0.5);
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px) scale(1.05);
+    box-shadow:0 0 25px #38BDF8;
+}
+
+/* FEATURES */
+.grid-container{display:grid;gap:20px}
+
+.card{
+    background:#020617;
+    padding:25px;
+    border-radius:15px;
+    border:1px solid rgba(56,189,248,0.2);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 0 20px rgba(56,189,248,0.5);
+}
+
+/* GALLERY */
+.gallery{padding:60px 0;background:#020617}
+
+.gallery-grid{
+    column-count:4;
+    column-gap:10px;
+}
+
+.gallery-grid img,
+.gallery-grid video{
+    width:100%;
+    margin-bottom:10px;
+    border-radius:10px;
+    display:block;
+    break-inside:avoid;
+}
+
+.gallery img:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 15px #38BDF8;
+}
+
+/* FOOTER */
+footer{
+    background:#020617;
+    text-align:center;
+    padding:20px;
+}
+
+/* REVEAL */
+.reveal{
+    opacity:0;
+    transform:translateY(80px) scale(0.95);
+    filter:blur(6px);
+    transition:all .8s cubic-bezier(0.22,1,0.36,1);
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+}
+
+/* ================= MEMBER SYSTEM ================= */
+
+.member-card{
+    background:#020617;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    border:1px solid rgba(56,189,248,0.2);
+    transition:.3s;
+}
+
+.member-img{
+    width:100px;
+    height:100px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    overflow:hidden;
+    border:3px solid #38BDF8;
+    box-shadow:0 0 15px #38BDF8;
+}
+
+.member-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.member-img img:hover{
+    transform:scale(1.1);
+}
+
+.member-card .quote{
+    font-size:0.8rem;
+    opacity:0.7;
+    font-style:italic;
+}
+
+/* ================= ROLE FIX ================= */
+
+.member,.leader,.co,.officer{
+    position:relative;
+    border-radius:20px;
+    overflow:hidden;
+    background:#020617;
+}
+
+/* 🔥 FIX CLICK ISSUE */
+.member::before,
+.member::after,
+.leader::before,
+.leader::after,
+.co::before,
+.co::after,
+.officer::before,
+.officer::after{
+    pointer-events:none;
+}
+
+/* isi selalu di atas animasi */
+.member *,
+.leader *,
+.co *,
+.officer *{
+    position:relative;
+    z-index:2;
+}
+
+/* gambar tetap bisa diklik */
+.member-img,
+.member-img img{
+    position:relative;
+    z-index:5;
+    pointer-events:auto;
+}
+
+/* ================= MEMBER ================= */
+.member{
+    box-shadow:0 0 10px rgba(147,51,234,0.5);
+    animation:purplePulse 2s infinite;
+}
+
+.member::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:repeating-linear-gradient(
+        45deg,
+        transparent 0px,
+        transparent 14px,
+        rgba(147,51,234,0.3) 15px,
+        transparent 16px
+    );
+    animation:zebraMove 3s linear infinite;
+    opacity:0.4;
+}
+
+.member::after{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background:linear-gradient(90deg,transparent,#9333EA,transparent);
+    animation:borderRun 3s linear infinite;
+}
+
+/* ================= LEADER ================= */
+.leader{
+    box-shadow:0 0 15px gold;
+    animation:goldPulse 2s infinite;
+}
+
+.leader::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:repeating-linear-gradient(
+        45deg,
+        transparent 0px,
+        transparent 14px,
+        rgba(255,215,0,0.4) 15px,
+        transparent 16px
+    );
+    animation:zebraMove 3s linear infinite;
+    opacity:0.5;
+}
+
+.leader::after{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background:linear-gradient(90deg,transparent,gold,transparent);
+    animation:borderRun 2.5s linear infinite;
+}
+
+/* ================= CO ================= */
+.co{
+    box-shadow:0 0 10px #ffd700;
+    animation:coPulse 2s infinite;
+}
+
+.co::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:repeating-linear-gradient(
+        45deg,
+        transparent 0px,
+        transparent 14px,
+        rgba(255,223,100,0.3) 15px,
+        transparent 16px
+    );
+    animation:zebraMove 3s linear infinite;
+    opacity:0.4;
+}
+
+.co::after{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background:linear-gradient(90deg,transparent,#ffd700,transparent);
+    animation:borderRun 3s linear infinite;
+}
+
+/* ================= OFFICER ================= */
+.officer{
+    box-shadow:0 0 10px silver;
+    animation:silverPulse 2s infinite;
+}
+
+.officer::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:repeating-linear-gradient(
+        45deg,
+        transparent 0px,
+        transparent 14px,
+        rgba(192,192,192,0.3) 15px,
+        transparent 16px
+    );
+    animation:zebraMove 3s linear infinite;
+    opacity:0.4;
+}
+
+.officer::after{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background:linear-gradient(90deg,transparent,silver,transparent);
+    animation:borderRun 3s linear infinite;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes purplePulse{
+    0%{box-shadow:0 0 10px rgba(147,51,234,0.4)}
+    50%{box-shadow:0 0 25px rgba(147,51,234,0.9)}
+    100%{box-shadow:0 0 10px rgba(147,51,234,0.4)}
+}
+
+@keyframes goldPulse{
+    0%{box-shadow:0 0 10px gold}
+    50%{box-shadow:0 0 30px gold}
+    100%{box-shadow:0 0 10px gold}
+}
+
+@keyframes coPulse{
+    0%{box-shadow:0 0 8px #ffd700}
+    50%{box-shadow:0 0 20px #ffd700}
+    100%{box-shadow:0 0 8px #ffd700}
+}
+
+@keyframes silverPulse{
+    0%{box-shadow:0 0 8px silver}
+    50%{box-shadow:0 0 20px silver}
+    100%{box-shadow:0 0 8px silver}
+}
+
+@keyframes borderRun{
+    0%{transform:translateX(-100%)}
+    100%{transform:translateX(100%)}
+}
+
+@keyframes zebraMove{
+    0%{background-position:0 0}
+    100%{background-position:80px 80px}
+}
+
+/* ================= CHAT WHATSAPP STYLE FIX ================= */
+
+.chat-box{
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    z-index:10;
+}
+
+.chat-area{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:10px;
+    max-height:300px;
+    overflow-y:auto;
+}
+
+.chat{
+    max-width:75%;
+    padding:10px 14px;
+    border-radius:15px;
+    font-size:0.9rem;
+    line-height:1.4;
+    word-wrap:break-word;
+    animation:fadeIn .25s ease;
+}
+
+.chat.bot{
+    background:#1E293B;
+    align-self:flex-start;
+    border-bottom-left-radius:5px;
+}
+
+.chat.user{
+    background:#38BDF8;
+    color:black;
+    align-self:flex-end;
+    border-bottom-right-radius:5px;
+}
+
+.chat-input{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    padding:10px;
+}
+
+.chat-input input{
+    width:100%;
+    padding:10px;
+    border-radius:10px;
+    border:none;
+}
+
+.chat-input button{
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    background:#38BDF8;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* CHAT ANIMATION */
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(8px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+/* VIEWER FIX */
+#imgViewer{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:9999;
+    pointer-events:none;
+}
+
+#imgViewer img {
+    max-width: 85%;
+    max-height: 85%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transform: scale(0.9);
+    transition: .25s ease;
+}
+
+#imgViewer.active{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+#videoViewer{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+    transition:.3s ease;
+    z-index:99999;
+}
+
+#videoViewer.active{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+#videoPreview {
+    width: 90%;
+    max-width: 700px;
+    border-radius: 15px;
+    transform: scale(0.9);
+    transition: .25s ease;
+}
+
+#videoViewer.active #videoPreview {
+    transform: scale(1);
+}
+
+.popup-video {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+/* ================= ROLE CHECKBOX FIX ================= */
+
+#roleBox {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 0.9rem;
+display: flex;
+flex-direction: column;
+gap: 6px;
+}
+
+/* setiap label jadi 1 baris flex */
+#roleBox label {
+        display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0;
+    cursor: pointer;
+}
+
+/* checkbox biar rapi & sejajar */
+#roleBox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: #38BDF8;
+}
+
+/* jarak antar section */
+#roleBox p {
+    margin: 8px 0;
+    font-weight: 600;
+    color: #38BDF8;
+}
+
+/* FACILITY STYLE UPGRADE */
+.facility-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.facility-card {
+    text-align: center;
+    padding: 25px 15px;
+    transition: .3s;
+}
+
+.facility-card i {
+    font-size: 35px;
+    color: #38BDF8;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #38BDF8;
+    transition: .3s;
+}
+
+.facility-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color:#E2E8F0;
+}
+
+.facility-card:hover i {
+    transform: scale(1.2);
+}
+
+.fa-whatsapp {
+    color: #25D366;
+    text-shadow: 0 0 10px #25D366;
+}
+
+.fa-tiktok {
+    color: #fff;
+    text-shadow: 0 0 10px #fff;
+}
+
+.facility-card p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.facility-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+}
+
+.facility-card:hover i {
+    transform: scale(1.2);
+    transition: .3s;
+    color: #60A5FA;
+}
+
+/* ================= FACILITY GRID ================= */
+
+.facility-grid{
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+
+/* ================= FACILITY CARD BASE ================= */
+
+.facility-card{
+    text-align:center;
+    padding:25px 15px;
+    transition:all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    
+    /* scroll animation awal */
+    opacity:0;
+    transform:translateY(60px) scale(0.95);
+}
+
+/* ================= ICON ================= */
+
+.facility-card i{
+    font-size:35px;
+    color:#38BDF8;
+    margin-bottom:10px;
+    text-shadow:0 0 10px #38BDF8;
+    transition:.3s;
+}
+
+/* ================= TEXT ================= */
+
+.facility-card h3{
+    margin-bottom:8px;
+    font-size:1.1rem;
+}
+
+.facility-card p{
+    font-size:0.85rem;
+    opacity:0.8;
+}
+
+/* ================= SHOW (SCROLL IN) ================= */
+
+.facility-card.show{
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
+
+/* ================= HOVER EFFECT ================= */
+
+.facility-card:hover{
+    transform:translateY(-12px) scale(1.04);
+    box-shadow:0 0 30px rgba(56,189,248,0.45);
+}
+
+/* icon ikut hidup saat hover */
+.facility-card:hover i{
+    transform:scale(1.2);
+    color:#60A5FA;
+}
+
+/* ================= RESPONSIVE GRID ================= */
+
+.facility-grid{
+    display:grid;
+    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}

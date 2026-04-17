@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AXTRITH-ID</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="axtr.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-wrapper">
+
+      <div class="toggle" id="toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <div class="logo-text">AXTRITH-ID</div>
+
+      <ul class="menu" id="menu">
+        <li><a href="#home">Dashboard</a></li>
+        <li><a href="#facility">Fasilitas</a></li>
+        <li><a href="#member">Roster Member</a></li>
+        <li><a href="#event">Event</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Join</a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="container reveal">
+    <div class="hero-content">
+
+      <div class="hero-logo" id="logoClick">
+        <img src="axtr.png" alt="logo">
+      </div>
+
+      <h1 class="title">WELCOME TO <span id="guildName">AXTRITH-ID</span></h1>
+      <p class="subtitle">Good Attitude adalah Pedoman Utama Kami</p>
+      <button class="btn-primary" id="exploreBtn">Explore Menu</button>
+
+    </div>
+  </div>
+</section>
+<br>
+<br>
+
+<!-- FACILITY -->
+<!-- FACILITY -->
+<section id="facility" class="features reveal">
+  <div class="container">
+    <h2 class="section-title">FASILITAS GUILD</h2>
+
+    <div class="grid-container facility-grid">
+
+      <div class="card facility-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Anti Toxic Community</h3>
+        <p>Guild fokus pada player yang sopan & kompak.</p>
+      </div>
+
+      <div class="card facility-card">
+        <i class="fas fa-gamepad"></i>
+        <h3>Scrim & Training</h3>
+        <p>Latihan rutin untuk meningkatkan skill tim.</p>
+      </div>
+
+      <div class="card facility-card">
+        <i class="fas fa-trophy"></i>
+        <h3>Event & Turnamen</h3>
+        <p>Ikut event internal dan kompetitif berhadiah.</p>
+      </div>
+
+      <div class="card facility-card">
+        <i class="fas fa-users"></i>
+        <h3>Team Solid</h3>
+        <p>Komunikasi aktif dan kerja sama tim.</p>
+      </div>
+
+      <div class="card facility-card">
+        <i class="fas fa-headset"></i>
+        <h3>Support Member</h3>
+        <p>Bantuan untuk member baru & perkembangan akun.</p>
+      </div>
+
+      <div class="card facility-card">
+        <i class="fas fa-gem"></i>
+        <h3>Rank Push</h3>
+        <p>Push rank bareng sampai top leaderboard.</p>
+      </div>
+      
+      <div class="card facility-card">
+  <i class="fas fa-crosshairs"></i>
+  <h3>Guild Wars</h3>
+  <p>Diadakan setiap Sabtu malam Minggu, pukul 16.00 WIB - 23.59 WIB. Siap tempur dan push rank bareng!</p>
+</div>
+
+<div class="card facility-card">
+  <i class="fas fa-robot"></i>
+  <h3>Asisten Zivaa</h3>
+  <p>Asisten grup otomatis yang siap membantu member 24/7 untuk info, bantuan, dan kebutuhan guild.</p>
+</div>
+
+<div class="card facility-card">
+  <i class="fab fa-whatsapp"></i>
+  <h3>Saluran WhatsApp</h3>
+  <p>Update info guild, event, dan pengumuman resmi langsung dari admin.</p>
+</div>
+
+<div class="card facility-card">
+  <i class="fab fa-whatsapp"></i>
+  <h3>Grup WhatsApp</h3>
+  <p>Tempat komunikasi antar member, diskusi, dan koordinasi game.</p>
+</div>
+
+<div class="card facility-card">
+  <i class="fab fa-tiktok"></i>
+  <h3>TikTok AXTR</h3>
+  <p>Konten highlight, montage, dan momen seru guild AXTR.</p>
+</div>
+
+<div class="card facility-card">
+  <i class="fas fa-globe"></i>
+  <h3>Website Guild</h3>
+  <p>Portal resmi AXTRITH-ID untuk pendaftaran, info, dan update terbaru.</p>
+</div>
+
+    </div>
+  </div>
+</section>
+<br>
+<br>
+
+<!-- MEMBER -->
+<section id="member" class="features reveal">
+  <div class="container">
+
+    <h2 class="section-title">ROSTER MEMBER</h2>
+
+    <div style="text-align:center; margin:10px;">
+      <input id="searchMember" type="text" placeholder="Cari nama member..."
+      style="padding:10px; width:80%; border-radius:10px; border:none;">
+    </div>
+
+    <div class="grid-container" id="memberContainer"></div>
+
+  </div>
+</section>
+<br>
+<br>
+
+<!-- EVENT -->
+<section id="event" class="features reveal">
+  <div class="container">
+    <h2 class="section-title">EVENT</h2>
+    <p style="text-align:center;">Segera hadir 🔥</p>
+  </div>
+</section>
+<br>
+<br>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery reveal">
+  <div class="container">
+    <h2 class="section-title">GALLERY</h2>
+
+    <div class="gallery-grid">
+
+      <!-- VIDEO POPUP -->
+      <video class="popup-video" muted loop playsinline>
+        <source src="video 1.mp4" type="video/mp4">
+      </video>
+
+      <video class="popup-video" muted loop playsinline>
+        <source src="video 2.mp4" type="video/mp4">
+      </video>
+
+      <video class="popup-video" muted loop playsinline>
+        <source src="video 3.mp4" type="video/mp4">
+      </video>
+      
+      <video class="popup-video" muted loop playsinline>
+  <source src="video 4.mp4" type="video/mp4">
+</video>
+
+            <video class="popup-video" muted loop playsinline>
+        <source src="video 5.mp4" type="video/mp4">
+      </video>
+      
+            <video class="popup-video" muted loop playsinline>
+        <source src="video 6.mp4" type="video/mp4">
+      </video>
+      
+            <video class="popup-video" muted loop playsinline>
+        <source src="video 7.mp4" type="video/mp4">
+      </video>
+      
+            <video class="popup-video" muted loop playsinline>
+        <source src="video 8.mp4" type="video/mp4">
+      </video>
+      
+
+    </div>
+
+  </div>
+</section>
+<br>
+<br>
+
+<!-- JOIN -->
+<section id="contact" class="features reveal">
+  <div class="container">
+
+    <h2 class="section-title">JOIN GUILD</h2>
+
+    <div class="chat-box">
+
+      <div class="chat-area" id="chatArea">
+        <div class="chat bot">⚠
+          Isi data dulu ya biar bisa join Guild AXTRITH-ID 
+        </div>
+      </div>
+
+      <div class="chat-input">
+  
+  <!-- INPUT DINAMIS (INTERVIEW) -->
+  <input type="text" id="chatInput" placeholder="Ketik jawaban..." autocomplete="off">
+
+  <!-- ROLE (MUNCUL SAAT STEP ROLE) -->
+  <div id="roleBox" style="color:white; text-align:left; display:none;">
+    <p style="margin-bottom:5px;">Pilih Role:</p>
+    
+    <label><input type="checkbox" value="Rusher"> Rusher</label><br>
+    <label><input type="checkbox" value="Bomber"> Bomber</label><br>
+    <label><input type="checkbox" value="Riffler"> Riffler</label><br>
+    <label><input type="checkbox" value="Sniper"> Sniper</label><br>
+    <label><input type="checkbox" value="Support"> Support</label><br>
+    
+    <p style="margin-top:8px;">Tambahan:</p>
+    
+    <label><input type="checkbox" value="Flanker"> Flanker</label><br>
+    <label><input type="checkbox" value="Pengaman"> Pengaman</label><br>
+    <label><input type="checkbox" value="All Role"> All Role</label><br>
+  </div>
+
+  <button id="sendBtn">Kirim 🚀</button>
+
+</div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- IMAGE VIEWER -->
+<div id="imgViewer">
+  <img id="imgPreview">
+</div>
+
+<!-- 🔥 VIDEO POPUP -->
+<div id="videoViewer">
+  
+  <!-- CLOSE BUTTON -->
+  <div id="closeVideoBtn">✕</div>
+
+  <video id="videoPreview" controls autoplay></video>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 AXTRITH-ID</p>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="member.js?v=2"></script>
+<script src="axtr.js?v=2"></script>
+
+</body>
+</html>
